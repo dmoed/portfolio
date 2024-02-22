@@ -1,7 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  content: ['./src/*.{js,jsx}', './*.html'],
+  content: ['./src/*.{js,jsx}', './src/*.html'],
   theme: {
     screens: {
       'sm': '640px',

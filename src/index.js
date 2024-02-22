@@ -1,7 +1,9 @@
 import './style.css';
 
-import $ from 'jquery'
 import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function intro() {
     const tl = gsap.timeline({
@@ -22,7 +24,6 @@ function section2() {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: '#section-2',
-            start: "top 30%",
         }
     });
 
@@ -37,7 +38,6 @@ function section3() {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: '#section-3',
-            start: "top 30%",
         }
     });
 
@@ -45,8 +45,10 @@ function section3() {
     tl.to("#section-3 .animate-text", {y: 0, autoAlpha: 1, stagger: 0.1, ease: "power1.out"})
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
+
+    gsap.to("#default-loader", {y: "-100%", ease: "power1.out"})
+
     intro()
     section2()
     section3()
